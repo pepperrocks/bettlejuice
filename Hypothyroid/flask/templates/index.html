@@ -29,74 +29,138 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='css/style_kid.css') }}"
     />
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
   </head>
 
   <body>
     <div class="login">
       <h1>Hypothyroid Predictor</h1>
 
+
       <form action="{{ url_for('predictHypothyroid')}}" method="post">
-        <label for="Age">Age</label><br />
-        <input
-          style="border: 1px solid black"
-          class="form-control"
-          type="text"
-          name="Age"
-          placeholder="Age"
-          required="required"
-        />
         <br /><br />
 
-        <label for="Sex">Sex</label><br />
-        <select name="sex" id="sex">
-          <option value="1">Male</option>
-          <option value="0">Female</option>
-        </select>
+
+        <div class ="row g-3">
+
+          <div class="col-md-6">
+            <label for="Age">Age</label><br />
+            <input
+              style="border: 1px solid black"
+              class="form-control"
+              type="text"
+              name="Age"
+              placeholder="Age"
+              required="required"
+            />
+
+
+          </div>
+          <div class="col-md-6">
+            <label for="Sex">Sex</label><br />
+            <select class="form-select" name="sex" id="sex">
+              <option selected>Choose...</option>
+              <option value="1">Male</option>
+              <option value="0">Female</option>
+            </select>
+
+          </div>
+
+        </div>
+
+
+                <div class ="row g-3">
+
+                  <div class="col-md-4">
+                    <label for="on_thyroxine">On Thyroxine</label><br />
+                    <select class="form-select" name="on_thyroxine" id="on_thyroxine">
+                      <option value="1">Yes</option>
+                      <option value="0">No</option>
+                    </select>
+                    <br /><br />
+
+                  </div>
+                  <div class="col-md-4">
+
+                    <label for="query_on_thyroxine">Query on Thyroxine</label><br />
+                    <select class="form-select" name="query_on_thyroxine" id="query_on_thyroxine">
+                      <option value="1">Yes</option>
+                      <option value="0">No</option>
+                    </select>
+                  </div>
+                  <div class="col-md-4">
+
+                    <label for="on_antithyroid_medication">On Antithyroid medication</label
+                    ><br />
+                    <select class="form-select" name="on_antithyroid_medication" id="on_antithyroid_medication">
+                      <option value="1">Yes</option>
+                      <option value="0">No</option>
+                    </select>
+                    <br /><br />
+
+
+                  </div>
+
+
+<div class ="row g-3">
+
+
+  <div class="col-md-6">
+  <label for="inputCity" class="form-label">City</label>
+  <input type="text" class="form-control" id="inputCity">
+</div>
+<div class="col-md-4">
+
+
+
+  <label for="inputState" class="form-label">State</label>
+  <select id="inputState" class="form-select">
+    <option selected>Choose...</option>
+    <option>...</option>
+  </select>
+</div>
+    <div class="col-md-2">
+  <label for="inputZip" class="form-label">Zip</label>
+    <input type="text" class="form-control" id="inputZip">
+
+  </div>
+</div>
+
+
         <br /><br />
 
-        <label for="on_thyroxine">On Thyroxine</label><br />
-        <select name="on_thyroxine" id="on_thyroxine">
-          <option value="1">Yes</option>
-          <option value="0">No</option>
-        </select>
-        <br /><br />
-
-        <label for="query_on_thyroxine">Query on Thyroxine</label><br />
-        <select name="query_on_thyroxine" id="query_on_thyroxine">
-          <option value="1">Yes</option>
-          <option value="0">No</option>
-        </select>
-        <br /><br />
-
-        <label for="on_antithyroid_medication">On Antithyroid medication</label
-        ><br />
-        <select name="on_antithyroid_medication" id="on_antithyroid_medication">
-          <option value="1">Yes</option>
-          <option value="0">No</option>
-        </select>
-        <br /><br />
+<div class= "row g-3" >
+  <div class="col-md-4">
 
         <label for="thyroid_surgery">Thyroid surgery</label><br />
-        <select name="thyroid_surgery" id="on_thyroxine">
+        <select class="form-select"  name="thyroid_surgery" id="on_thyroxine">
           <option value="1">Yes</option>
           <option value="0">No</option>
         </select>
         <br /><br />
+      </div>
+      <div class="col-md-4">
 
         <label for="query_hypothyroid">Query Hypothyroid</label><br />
-        <select name="query_hypothyroid" id="query_hypothyroid">
+        <select class="form-select" name="query_hypothyroid" id="query_hypothyroid">
           <option value="1">Yes</option>
           <option value="0">No</option>
         </select>
         <br /><br />
+      </div>
+      <div class="col-md-4">
 
         <label for="query_hyperthyroid">Query Hyperthyroid</label><br />
-        <select name="query_hyperthyroid" id="query_hyperthyroid">
+        <select class="form-select" name="query_hyperthyroid" id="query_hyperthyroid">
           <option value="1">Yes</option>
           <option value="0">No</option>
         </select>
         <br /><br />
-
+  </div>
+</div>
         <label for="pregnant">Pregnant</label><br />
         <select name="pregnant" id="pregnant">
           <option value="1">Yes</option>
@@ -256,5 +320,6 @@
       <br />
     </div>
     <br />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
